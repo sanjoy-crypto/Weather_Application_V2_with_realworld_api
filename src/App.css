@@ -1,38 +1,198 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: 'Ubuntu', sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.content_box{
+  position: relative;
+  height:500px;
+  width: 800px;
+  z-index: 999;
+  border-radius: 13px;
+  margin:20px;
+}
+.content_box img{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 1;
+  border-radius: 13px;
+}
+.content_box .weather_info {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 111;
+}
+.content_box .weather_info h2{
+  color:white;
+}
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.main .left_side{
+  flex-basis: 60%;
+  width: 100%;
+  height: 100%;
+  padding:60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  background: rgba(0,0,0,0.2);
+  
+}
+.left_side .date_time{
+  margin:20px;
+}
+.left_side .date_time .time{
+  font-size: 40px;
+  color:#ffffff;
+  font-weight: 500;
+}
+.left_side .date_time .date{
+  font-size: 22px;
+  color:#ffffff;
+  font-weight: 500;
+  margin-left: 5px;
+}
+.left_side .situation{
+  margin:20px;
+}
+.left_side .situation i{
+  font-size: 55px;
+  font-weight: 700;
+  color:white;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.left_side .situation p {
+  margin:0px 10px 0;
+  color:white;
+  font-size: 28px;
+  font-weight: 600;
+}
+.left_side .bottom_option{
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin:20px;
+  
+}
+.left_side .bottom_option .deg{
+  color:white;
+  font-size: 45px;
+  font-weight: 500;
+}
+.left_side .bottom_option .location{
+  margin-left: 0px;
+  color:white;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.main .right_side{
+  flex-basis: 40%;
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+ border-top-right-radius: 13px;
+ border-bottom-right-radius: 13px;
+  padding:20px;
+}
+.main .right_side .search{
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+}
+.main .right_side .search input{
+  flex-basis: 70%;
+  height: 35px;
+  border:1px solid #fff;
+  background: transparent;
+  color: #ffffff;
+  font-size: 16px;
+  padding:6px 13px;
+  outline: none;
+}
+.main .right_side .search button{
+  flex-basis: 30%;
+  font-size: 16px;
+  border:none;
+  padding:6px 10px;
+  background-color: #ffffff;
+  color: black;
+  cursor: pointer;
+}
+.main .right_side .details{
+  margin:40px 0;
+}
+.main .right_side .details .title{
+  color:white;
+  font-size: 18px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #fff;
+}
+.main .right_side .details .other_info{
+  margin-top: 20px;
+  padding:0 20px 20px 0;
+  border-bottom: .2px solid #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+.main .right_side .details .other_info span{
+  color:white;
+}
+.main .right_side .details .other_info span i{
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width:650px){
+ 
+  .main{
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .content_box{
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
+  .content_box img{
+    border-radius: 0;
+  }
+  .main .left_side{
+    flex-basis: 40%;
+  }
+  .main .right_side{
+    flex-basis: 60%;
+  }
+  .container{
+    height: 140vh;
+  }
+
+  .main .right_side{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    
   }
 }
